@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pizzaapp/core/Routes/app_route_constants.dart';
 
-
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +14,9 @@ class SplashScreen extends StatelessWidget {
         double width = constraints.maxWidth;
 
         //calculating font size and lottie image height and width for diff. screens
-        double headingFontSize = width / 10;
-        double subheadingFontSize = width / 21;
+        double fontSize = width / 40;
         double animationWidth = width / 3;
-        double animationHeight = height / 4;
-
-
-        debugPrint("Start");
-        // to navigate to new screen post 1 mins (function to create delayed effect)
-        Future.delayed(
-            const Duration(seconds: 10), () => context.pushNamed(AppRouteConstants.stage1Name));
-
-        debugPrint("End");
+        double animationHeight = animationWidth * 2.2;
 
         return Center(
           child: SizedBox(
@@ -43,18 +31,15 @@ class SplashScreen extends StatelessWidget {
                   Text(
                     'Pizzeria',
                     style: TextStyle(
-                        fontSize: headingFontSize, fontWeight: FontWeight.bold),
+                        fontSize: fontSize, fontWeight: FontWeight.bold),
                   ),
-                  Text('Where Happiness Is Served',
+                  Text('Where Happiness Is Distributed',
                       style: TextStyle(
-                          fontSize: subheadingFontSize,
-                          fontWeight: FontWeight.bold)),
+                          fontSize: fontSize, fontWeight: FontWeight.bold)),
                 ],
               )),
         );
       })),
     );
-
-    
   }
 }
